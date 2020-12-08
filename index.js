@@ -13,7 +13,7 @@ module.exports = class Tenor {
     });
     this.token = token.data.auth.token;
     this.uid = token.data.user.id;
-    return token;
+    return token.data;
   }
 
   async addToken(token) {
@@ -29,7 +29,7 @@ module.exports = class Tenor {
     var data = new fd();
     data.append("token",this.token);
     data.append("collectionid","keyboarduser-"+this.uid);
-    data.append("streams","savedriffs");
+    data.append("stream","savedriffs");
     data.append("tags",tags || "gif");
     data.append("platform","android");
     data.append("file",fs.createReadStream(path));
