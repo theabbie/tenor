@@ -4,6 +4,23 @@
 
 >**Unofficial Tenor API**
 
+## Example
+
+The Following Code snipet will help you understand how to use this.
+
+```js 
+var Tenor = require("tenor-api");
+var tenor = new Tenor();
+
+(async function() {
+  await tenor.login("username","password");
+  // or
+  await tenor.addToken("token");
+
+  await tenor.upload("path_to_media");
+})();
+```
+
 ## Contributing
 
 Thank you for your interest in contributing, If you feel like there's something missing or any new feature can be added, just create a PR and I will see the rest.
